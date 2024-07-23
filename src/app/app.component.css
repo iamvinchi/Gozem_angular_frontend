@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&display=swap');
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('../assets/fonts/SFPRODISPLAYBLACKITALIC.OTF') format('otf'),
+         url('../assets/fonts/SFPRODISPLAYBOLD.OTF') format('otf'),
+         url('../assets/fonts/SFPRODISPLAYHEAVYITALIC.OTF') format('otf'),
+         url('../assets/fonts/SFPRODISPLAYLIGHTITALIC.OTF') format('otf'),
+         url('../assets/fonts/SFPRODISPLAYMEDIUM.OTF') format('otf'),
+         url('../assets/fonts/SFPRODISPLAYREGULAR.OTF') format('otf'),
+         url('../assets/fonts/SFPRODISPLAYSEMIBOLDITALIC.OTF') format('otf'),
+         url('../assets/fonts/SFPRODISPLAYTHINITALIC.OTF') format('otf'),
+         url('../assets/fonts/SFPRODISPLAYULTRALIGHTITALIC.OTF') format('otf');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('../assets/fonts/Geist-Black-BF6569491cec591.otf') format('otf'),
+         url('../assets/fonts/Geist-Bold-BF6569491da5a14.otf') format('otf'),
+         url('../assets/fonts/Geist-Light-BF6569491dc9c01.otf') format('otf'),
+         url('../assets/fonts/Geist-Medium-BF6569491e1c281.otf') format('otf'),
+         url('../assets/fonts/Geist-Regular-BF6569491e3eff1.otf') format('otf'),
+         url('../assets/fonts/Geist-SemiBold-BF6569491e8c368.otf') format('otf'),
+         url('../assets/fonts/Geist-Thin-BF6569491e12aff.otf') format('otf'),
+         url('../assets/fonts/Geist-UltraBlack-BF6569491ecdc4d.otf') format('otf'),
+         url('../assets/fonts/Geist-UltraLight-BF6569491f3e71d.otf') format('otf'),
+         url('../assets/fonts/GeistVF-BF6569491f13184.ttf') format('otf');
+    font-style: normal;
+}

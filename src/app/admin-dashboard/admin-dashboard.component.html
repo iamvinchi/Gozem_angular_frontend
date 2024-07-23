@@ -1,0 +1,69 @@
+<div class="main-content">
+  <main id="content">
+    <div class="jobs">
+      <div class="table-responsive">
+        <table>
+          <caption>Package List</caption>
+          <thead>
+            <tr>
+              <th>Package ID</th>
+              <th>Sender Name</th>
+              <th>Receiver Name</th>
+              <th>Receiver Address</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pkg of packageList">
+              <td>{{ pkg.package_id }}</td>
+              <td>{{ pkg.from_name }}</td>
+              <td>{{ pkg.to_name }}</td>
+              <td>{{ pkg.to_address }}</td>
+              <td>{{ pkg.status }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="action-div">
+        <button style="height: 54px !important;" class="continue-to-create" (click)="goToPage('create-package')">Create
+          Package</button>
+      </div>
+    </div>
+
+    <div class="jobs">
+      <div class="table-responsive">
+
+        <table>
+          <caption>Delivery Lists</caption>
+          <thead>
+            <tr>
+              <th>Delivery ID</th>
+              <th>Package ID</th>
+              <th>Pickup Time</th>
+              <th>End Time</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let dlv of deliveryList">
+              <td>{{ dlv.delivery_id }}</td>
+              <td>{{ dlv.package_id }}</td>
+              <td>{{ dlv.pickup_time }}</td>
+              <td>{{ dlv.end_time }}</td>
+              <td>{{ dlv.status }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="action-div">
+        <button style="height: 54px !important;" class="continue-to-create" (click)="goToPage('create-delivery')">Create
+          Delivery</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<label for="sidebar-toggle" class="body-label"></label>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">

@@ -1,0 +1,143 @@
+.content {
+    border-radius: 8px;
+    border: 0.5px solid rgba(208, 213, 221, 1);
+    box-shadow: 0.5px solid rgba(208, 213, 221, 1);
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    height: inherit;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    padding: 20px 16px 20px 16px;
+}
+
+.search-container {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.action-div {
+    width: 14%;
+    height: 20px !important;
+    margin: auto;
+    padding: 20px 16px;
+    gap: 20px;
+    opacity: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.track {
+    width: 100%;
+    height: 54px;
+    padding: 16px 50px 16px 50px;
+    gap: 10px;
+    border-radius: 8px;
+    opacity: 0px;
+    background: rgb(33, 155, 43);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 10px;
+    letter-spacing: -0.40799999237060547px;
+    text-align: center !important;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.user-box {
+    border-radius: 8px;
+    border: 0.5px solid rgba(208, 213, 221, 1);
+    box-shadow: 0.5px solid rgba(208, 213, 221, 1);
+    display: flex;
+    width: 80%;
+    height: 20px !important;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    padding: 20px 16px;
+}
+
+.user-box input {
+    width: 100%;
+    height: 20px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    background: none;
+    -webkit-appearance: none;
+}
+
+.main-view {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.package-list-view {
+    width: 25%;
+    border: 0.5px solid rgba(208, 213, 221, 1);
+    border-right: none;
+    box-shadow: 0.5px solid rgba(208, 213, 221, 1);
+    padding: 10px;
+}
+
+.map-view {
+    width: 55%;
+    height: 600px;
+    background-color: yellow;
+}
+
+.button-view {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.action-btn {
+    height: 54px;
+    padding: 10px;
+    margin: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    opacity: 0px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.action-btn[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+google-map {
+    display: block;
+}
+
+
+/*  */
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1124px) {
+    .main-content {
+        margin-left: 0;
+    }
+
+    header {
+        left: 0;
+        width: 100%;
+        gap: .625rem;
+    }
+}

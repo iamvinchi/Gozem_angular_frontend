@@ -1,0 +1,52 @@
+<div class="main-content">
+    <main class="content">
+        <div class="search-container">
+            <div class="user-box">
+                <input type="text" name="search" [(ngModel)]="package_id" id="receiver_address"
+                    placeholder="Enter Package ID" />
+            </div>
+            <div class="action-div">
+                <button class="track" (click)="getPackage()">Track</button>
+            </div>
+        </div>
+        <div class="main-view" *ngIf="package?.package; else noPackage">
+            <div class="package-list-view">
+                <div>
+                    <h3 style=" text-align: center;">Package Details</h3>
+                    <p><b>Package ID: </b> {{package?.package?.package_id}}</p>
+                    <p><b>Package Description: </b> {{package?.package?.description}}</p>
+                    <p><b>Sender Name: </b>{{package?.package?.from_name}}</p>
+                    <p><b>Sender Address: </b>{{package?.package?.from_address}}</p>
+                    <p><b>Receiver Name: </b>{{package?.package?.to_name}}</p>
+                    <p><b>Receiver Address: </b>{{package?.package?.to_address}}</p>
+                </div>
+
+                <div *ngIf="package.delivery; else noDelivery">
+                    <h3 style=" text-align: center;">Delivery Details</h3>
+                    <p><b>Delivery ID: </b>{{package?.delivery?.delivery_id}}</p>
+                    <p *ngIf="package?.delivery?.pickup_time"><b>Pickup Time: </b>{{package?.delivery?.pickup_time}}</p>
+                    <p *ngIf="package?.delivery?.start_time"><b>Start Time: </b>{{package?.delivery?.start_time}}</p>
+                    <p *ngIf="package?.delivery?.end_time"><b>End Time: </b>{{package?.delivery?.end_time}}</p>
+                    <p *ngIf="package?.delivery?.status === 'open' else notOpen"><b>Status:
+                        </b>{{package?.delivery?.status}} (This status means delivery is yet to start!)</p>
+                </div>
+                <ng-template #notOpen>
+                    <p><b>Status: </b>{{package?.delivery?.status}}</p>
+                </ng-template>
+            </div>
+            <ng-template #noDelivery>
+                <h3>No delivery details for this package yet!.</h3>
+            </ng-template>
+            <div class="map-view"
+                *ngIf="package?.delivery && (package?.delivery?.status !== 'open' && package?.delivery?.status !== 'picked-up')">
+                <app-map [result]="package"></app-map>
+            </div>
+
+        </div>
+        <ng-template #noPackage>
+            <p>Please search for a package to track!.</p>
+        </ng-template>
+    </main>
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">

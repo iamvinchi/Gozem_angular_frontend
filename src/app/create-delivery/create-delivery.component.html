@@ -1,0 +1,26 @@
+<div class="main" id="main">
+    <div class="container">
+
+        <h4 class="title">Create Delivery</h4>
+
+        <form>
+            <div id="error-msg" class="error-msg" *ngIf="showErrorMessage">
+                {{errorMessage}}
+            </div>
+            <p class="placeholder">Select package<span style="color: red;">*</span></p>
+            <label class="user-box">
+                <select name="slctt" [(ngModel)]="package_id">
+                    <option value="" disabled selected>Select Package</option>
+                    <option *ngFor="let pkg of packageList" [value]="pkg.package_id">
+                        {{ pkg.package_id }}
+                    </option>
+                </select>
+            </label>
+
+            <div class="action-div">
+                <button style="height: 54px !important;" class="continue-to-create" (click)="create()">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>

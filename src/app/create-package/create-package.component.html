@@ -1,0 +1,54 @@
+<div class="main" id="main">
+    <div class="container">
+
+        <h4 class="title">Create Package</h4>
+
+        <form>
+            <div id="error-msg" class="error-msg" *ngIf="showErrorMessage">
+                {{errorMessage}}
+            </div>
+
+            <p class="placeholder">Description<span style="color: red;">*</span></p>
+            <div class="user-box">
+                <input type="text" name="description" [(ngModel)]="description" id="description" />
+            </div>
+            <p class="placeholder">Sender Name<span style="color: red;">*</span></p>
+            <div class="user-box">
+                <input type="text" name="sender_name" [(ngModel)]="sender_name" id="sender_name" />
+            </div>
+            <p class="placeholder">Sender Address<span style="color: red;">*</span></p>
+            <div class="user-box">
+                <input type="text" name="sender_address" [(ngModel)]="sender_address" id="sender_address" />
+            </div>
+            <p class="placeholder">Receiver Name<span style="color: red;">*</span></p>
+            <div class="user-box">
+                <input type="text" name="receiver_name" [(ngModel)]="receiver_name" id="receiver_name" />
+            </div>
+            <p class="placeholder">Receiver Address<span style="color: red;">*</span></p>
+            <div class="user-box">
+                <input type="text" name="receiver_address" [(ngModel)]="receiver_address" id="receiver_address" />
+            </div>
+            <p class="placeholder">Weight (grams)</p>
+            <div class="user-box">
+                <input type="number" name="weight" [(ngModel)]="weight" id="weight" />
+            </div>
+            <p class="placeholder">Width (cm)</p>
+            <div class="user-box">
+                <input type="number" name="width" [(ngModel)]="width" id="width" />
+            </div>
+            <p class="placeholder">height (cm)</p>
+            <div class="user-box">
+                <input type="number" name="height" [(ngModel)]="height" id="height" />
+            </div>
+            <p class="placeholder">Depth (cm)</p>
+            <div class="user-box">
+                <input type="number" name="depth" [(ngModel)]="depth" id="depth" />
+            </div>
+
+            <div class="action-div">
+                <button style="height: 54px !important;" class="continue-to-create" (click)="create()">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>

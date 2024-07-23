@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Geist', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+hr {
+    border-top: 1px solid #ced4da;
+}
+
+@-webkit-keyframes autofill {
+
+    0%,
+    100% {
+        color: #666;
+        background: transparent;
+    }
+}
+
+button {
+    outline: none;
+    border: 0.5px;
+    color: white;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* MAIN BODY/CONTENT */
+/* .main-content {
+    margin-left: 280px;
+    transition: margin-left 300ms;
+} */
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    background: rgba(242, 244, 247, 1);
+    gap: 2rem;
+    min-height: calc(100vh - 70px);
+    margin-top: 70px;
+}
+
+.continue-to-create {
+    width: 100%;
+    height: 49px;
+    margin: auto;
+    padding: 16px 50px 16px 50px;
+    gap: 10px;
+    border-radius: 8px;
+    opacity: 0px;
+    background: rgb(19, 98, 25);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 10px;
+    letter-spacing: -0.40799999237060547px;
+    text-align: center !important;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*  */
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1124px) {
+    .main-content {
+        margin-left: 0;
+    }
+
+    header {
+        left: 0;
+        width: 100%;
+        gap: .625rem;
+    }
+
+
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
+
+.jobs {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px 0px 0px 0px;
+    padding: 2rem 0rem;
+    text-align: left;
+    scroll-behavior: smooth;
+}
+
+.table-responsive {
+    overflow: auto;
+    width: 80%;
+}
+
+.action-div {
+    width: 20%;
+    align-self: center;
+    padding: 10px;
+}
+
+.jobs caption {
+    padding: .5rem .9375rem;
+    color: rgba(52, 64, 84, 1);
+    padding: 1rem .9375rem;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+.jobs table {
+    border-collapse: collapse;
+    width: 100%;
+    font-weight: normal;
+    border: none;
+    max-width: 100%;
+    white-space: nowrap;
+    color: rgba(102, 112, 133, 1);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    overflow: auto;
+}
+
+.jobs table thead {
+    background: rgb(19, 98, 25);
+    ;
+    color: rgba(255, 255, 255, 1);
+}
+
+.jobs td,
+.jobs th {
+    padding: 1.5rem .9375rem;
+}
+
+.jobs tbody tr:hover {
+    background: rgba(251, 251, 251, 1);
+    cursor: pointer;
+}
+
+.jobs td:last-child div {
+    background: rgba(23, 92, 211, 1);
+    color: white;
+    border-radius: 10px;
+    width: 5rem;
+    padding: 5px 2px;
+    gap: 7px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.jobs .green {
+    color: rgba(16, 139, 74, 1);
+}
+
+
+/*  */
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1124px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cards {
+        grid-template-columns: 100%;
+    }
+
+    .card-single {
+        padding: 1.25rem 4.25rem;
+    }
+
+    .jobs table {
+        font-size: .875rem;
+    }
+}
