@@ -1,0 +1,13 @@
+<div class="background-container">
+    <div class="route-select-container">
+        <p class="placeholder">Select User Type</p>
+        <label class="user-box">
+            <select name="route" [(ngModel)]="selectedRoute" (change)="navigateToRoute()">
+              <option value="" disabled selected>Select User Type</option>
+              <option *ngFor="let route of routes" [value]="route.path">
+                {{ route.name }}
+              </option>
+            </select>
+          </label>
+    </div>
+  </div>
