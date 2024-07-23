@@ -1,3 +1,3 @@
-export const isDevEnvironment = false; 
+export const isDevEnvironment = true; 
 export const isStagingEnvironment = false;
-export const isProductionEnvironment = true;
+export const isProductionEnvironment = false;

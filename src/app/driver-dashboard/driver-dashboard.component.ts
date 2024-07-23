@@ -90,8 +90,12 @@ export class DriverDashboardComponent {
       };
       await this.updateDelivery(body);
       this.websocketService.emitEvent("status_changed", { event: 'status_changed', delivery_id: this.package.delivery.delivery_id, status });
-      const watchId = localStorage.getItem('watchId')
-      navigator.geolocation.clearWatch(Number(watchId))
+      if(navigator.geolocation){
+        const watchId = localStorage.getItem('watchId')
+        navigator.geolocation.clearWatch(Number(watchId))
+      }
+      
+      
     }
   }
 
