@@ -1,17 +1,25 @@
 import { Injectable } from '@angular/core';
 import { io, Socket } from 'socket.io-client';
 import { Observable } from 'rxjs';
+import * as AppConstanst from '../../constants/constants'
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class WebsocketService {
   private socket: Socket | undefined;
+  isProductionEnvironment = AppConstanst.isProductionEnvironment;
+  isDevEnvironment = AppConstanst.isDevEnvironment;
 
   constructor() { }
+  devSocketUrl = 'http://localhost:3000';
+
+  productionSocketUrl = 'https://gozem-api.onrender.com';
+  socketUrl = this.isProductionEnvironment ? this.productionSocketUrl : this.isDevEnvironment ? this.devSocketUrl : '';
 
   initializeWebSocket() {
-    this.socket = io('http://localhost:3000'); // Replace with your server URL
+    this.socket = io(this.socketUrl); // Replace with your server URL
   }
 
   emitEvent(eventName: string, data: any): void {

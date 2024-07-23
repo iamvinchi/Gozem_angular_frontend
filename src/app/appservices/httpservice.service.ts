@@ -14,7 +14,7 @@ export class HttpserviceService {
   devApiBaseUrl = 'http://localhost:3000/api/';
 
   //Live/Production Site
-  productionApiBaseUrl = 'https://yara-api-yi3l.onrender.com/api/v1/';
+  productionApiBaseUrl = 'https://gozem-api.onrender.com/api/';
 
 
   baseUrl = this.isProductionEnvironment ? this.productionApiBaseUrl : this.isDevEnvironment ? this.devApiBaseUrl : '';
