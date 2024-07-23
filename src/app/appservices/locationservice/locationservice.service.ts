@@ -17,7 +17,6 @@ export class LocationserviceService {
       if (navigator.geolocation) {
         const watchId = navigator.geolocation.watchPosition(
           (position) => {
-            console.log('Got position:', position);
             const body = {
               status,
               location: {
@@ -25,8 +24,7 @@ export class LocationserviceService {
                 lng: position.coords.longitude
               }
             };
-            const event = status === "picked-up" ? "status_changed" : 'location_changed'
-            this.websocketService.emitEvent(event, { event: 'location_changed', delivery_id: deliveryId, location: body.location });
+            this.websocketService.emitEvent("location_changed", { event: 'location_changed', delivery_id: deliveryId, location: body.location });
             resolve(position);
           },
           (error) => {

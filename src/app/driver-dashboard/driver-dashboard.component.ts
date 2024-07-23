@@ -50,12 +50,11 @@ export class DriverDashboardComponent {
   }
 
   subscribeToStatusUpdates() {
-    this.websocketService.onEvent('status_updated').subscribe((data: any) => {
+    this.websocketService.onEvent('delivery_updated').subscribe((data: any) => {
 
       swal.fire({ text: `Your delivery is in ${data.status.split("-").join(' ')} mode`, timerProgressBar: true, position: "top-end", timer: 30000, showCancelButton: false, showConfirmButton: false })
     });
   }
-
 
 
   async update(status: string) {
@@ -65,10 +64,8 @@ export class DriverDashboardComponent {
         pickup_time: Date.now(),
         status
       };
-      this.websocketService.emitEvent("status_changed", { event: 'status_changed', delivery_id: this.package.delivery.delivery_id, status });
-
       await this.updateDelivery(body);
-
+      this.websocketService.emitEvent("status_changed", { event: 'status_changed', delivery_id: this.package.delivery.delivery_id, status });
     } else if (status === "in-transit") {
       const position: any = await this.locationService.getLocation(this.package.delivery.delivery_id);
       const body = {
@@ -79,10 +76,8 @@ export class DriverDashboardComponent {
           lng: position.coords.longitude
         }
       };
-      this.websocketService.emitEvent("status_changed", { event: 'status_changed', delivery_id: this.package.delivery.delivery_id, status });
-
       await this.updateDelivery(body);
-
+      this.websocketService.emitEvent("status_changed", { event: 'status_changed', delivery_id: this.package.delivery.delivery_id, status });
     } else if (status === 'delivered' || status === 'failed') {
       const position: any = await this.locationService.getLocation(this.package.delivery.delivery_id);
       const body = {
@@ -93,9 +88,8 @@ export class DriverDashboardComponent {
           lng: position.coords.longitude
         }
       };
-      this.websocketService.emitEvent("status_changed", { event: 'status_changed', delivery_id: this.package.delivery.delivery_id, status });
-
       await this.updateDelivery(body);
+      this.websocketService.emitEvent("status_changed", { event: 'status_changed', delivery_id: this.package.delivery.delivery_id, status });
       const watchId = localStorage.getItem('watchId')
       navigator.geolocation.clearWatch(Number(watchId))
     }

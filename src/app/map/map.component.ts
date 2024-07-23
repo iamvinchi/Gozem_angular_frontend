@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { GoogleMapsModule, MapDirectionsRenderer } from "@angular/google-maps";
 import { WebsocketService } from '../appservices/websocketService/websocket.service';
-import { AlertserviceService } from '../appservices/alertservice/alertservice.service';
 import { LocationserviceService } from '../appservices/locationservice/locationservice.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 
@@ -26,12 +25,10 @@ export class MapComponent implements OnDestroy {
   locationUpdateSubscription: any;
 
 
-  constructor(private websocketService: WebsocketService, private alertService: AlertserviceService, private locationService: LocationserviceService, private spinner: NgxSpinnerService) { }
+  constructor(private websocketService: WebsocketService, private locationService: LocationserviceService, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
-
     this.initiateMap();
-
   }
 
   ngOnDestroy() {
@@ -41,7 +38,6 @@ export class MapComponent implements OnDestroy {
   }
 
   initiateMap() {
-    console.log(this.result, "coming from map")
     if (this.result?.delivery?.location) {
       this.mapCenter = {
         lat: parseFloat(this.result.delivery.location.lat),
@@ -92,7 +88,7 @@ export class MapComponent implements OnDestroy {
   }
 
   subscribeToDeliveryUpdates() {
-    this.locationUpdateSubscription = this.websocketService.onEvent('delivery_updated').subscribe((data: any) => {
+    this.locationUpdateSubscription = this.websocketService.onEvent('location_updated').subscribe((data: any) => {
 
       this.mapCenter = { lat: parseFloat(data.data.location.lat), lng: parseFloat(data.data.location.lng) };
 

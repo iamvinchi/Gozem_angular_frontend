@@ -27,12 +27,9 @@
                     <p *ngIf="package?.delivery?.pickup_time"><b>Pickup Time: </b>{{package?.delivery?.pickup_time}}</p>
                     <p *ngIf="package?.delivery?.start_time"><b>Start Time: </b>{{package?.delivery?.start_time}}</p>
                     <p *ngIf="package?.delivery?.end_time"><b>End Time: </b>{{package?.delivery?.end_time}}</p>
-                    <p *ngIf="package?.delivery?.status === 'open' else notOpen"><b>Status:
-                        </b>{{package?.delivery?.status}} (This status means delivery is yet to start!)</p>
+                    <p><b>Status:</b> {{package?.delivery?.status}}</p>
                 </div>
-                <ng-template #notOpen>
-                    <p><b>Status: </b>{{package?.delivery?.status}}</p>
-                </ng-template>
+                
             </div>
             <ng-template #noDelivery>
                 <h3>No delivery details for this package yet!.</h3>

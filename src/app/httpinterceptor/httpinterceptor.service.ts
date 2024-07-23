@@ -8,7 +8,7 @@ import {
 import { Observable, throwError } from "rxjs";
 import { catchError } from "rxjs/operators";
 import { HttpserviceService } from '../appservices/httpservice.service';
-declare let $: any;
+
 
 @Injectable({
   providedIn: 'root'
